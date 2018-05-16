@@ -85,10 +85,12 @@ while igang == 1:
             output.append(" ")
         else:
             output.append(tekst[i])
-    print(*output)
-    txt = *output
+        output.append(" ")
+    txt = ''.join(output)
     subprocess.run(['clip.exe'], input=txt.strip().encode('utf-16'), check=True)
-    print("Copied to clipboard")
+    print (txt)
+    print("Din tekst er kopieret til udklipsholderen")
+    print("")
     slutter = 1
     while slutter == 1:
         slut = input("1. Vil du forsætte? Eller 2. Vil du stoppe? ")
