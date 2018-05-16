@@ -1,3 +1,5 @@
+import subprocess
+
 igang = 1
 
 while igang == 1:
@@ -84,6 +86,9 @@ while igang == 1:
         else:
             output.append(tekst[i])
     print(*output)
+    txt = *output
+    subprocess.run(['clip.exe'], input=txt.strip().encode('utf-16'), check=True)
+    print("Copied to clipboard")
     slutter = 1
     while slutter == 1:
         slut = input("1. Vil du forsætte? Eller 2. Vil du stoppe? ")
